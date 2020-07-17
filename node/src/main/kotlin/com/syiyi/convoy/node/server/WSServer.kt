@@ -5,6 +5,8 @@ import io.netty.channel.ChannelOption
 import io.netty.channel.EventLoopGroup
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.nio.NioServerSocketChannel
+import io.netty.handler.logging.LogLevel
+import io.netty.handler.logging.LoggingHandler
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
@@ -29,6 +31,7 @@ class WSServer {
             val bootstrap = ServerBootstrap().apply {
                 group(boss, work)
                 channel(NioServerSocketChannel::class.java)
+                handler(LoggingHandler(LogLevel.INFO))
                 childOption(ChannelOption.SO_KEEPALIVE, true)
                 childHandler(WsChannelInitializer())
             }
