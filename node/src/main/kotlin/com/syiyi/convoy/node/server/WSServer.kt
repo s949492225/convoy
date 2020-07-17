@@ -1,6 +1,7 @@
 package com.syiyi.convoy.node.server
 
 import io.netty.bootstrap.ServerBootstrap
+import io.netty.channel.ChannelOption
 import io.netty.channel.EventLoopGroup
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.nio.NioServerSocketChannel
@@ -28,6 +29,7 @@ class WSServer {
             val bootstrap = ServerBootstrap().apply {
                 group(boss, work)
                 channel(NioServerSocketChannel::class.java)
+                childOption(ChannelOption.SO_KEEPALIVE, true)
                 childHandler(WsChannelInitializer())
             }
             bootstrap.bind(nettyPort).sync().apply {

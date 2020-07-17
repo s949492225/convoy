@@ -5,7 +5,7 @@ import io.netty.channel.SimpleChannelInboundHandler
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame
 import java.time.LocalDateTime
 
-class WSHandler : SimpleChannelInboundHandler<TextWebSocketFrame>() {
+class WSTextFrameHandler : SimpleChannelInboundHandler<TextWebSocketFrame>() {
     @Throws(Exception::class)
     override fun channelRead0(channelHandlerContext: ChannelHandlerContext, textWebSocketFrame: TextWebSocketFrame) { // 打印接收到的消息
         println("服务端接受到的消息:" + textWebSocketFrame.text())

@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package protocol;
+
+option java_package = "com.syiyi.convoy.common.protocol";
+option java_outer_classname = "MessageProto";
+
+message Message{
+  required string id = 1;
+  required string content = 2;
+  required string type = 3;
+}

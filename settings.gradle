@@ -1,2 +1,4 @@
 rootProject.name = "convoy"
 include ":node"
+include ":common"
+include ":client"

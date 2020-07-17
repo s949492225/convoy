@@ -1,0 +1,9 @@
+apply plugin: 'kotlin' // Required for Kotlin integration
+
+dependencies {
+    implementation project(":common")
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation("com.squareup.okhttp3:okhttp:4.8.0")
+    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
+}
