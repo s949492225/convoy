@@ -1,5 +1,8 @@
 apply plugin: 'kotlin' // Required for Kotlin integration
-
+repositories {
+    mavenCentral()
+    google()
+}
 dependencies {
     implementation project(":common")
     implementation "org.jetbrains.kotlin:kotlin-reflect"

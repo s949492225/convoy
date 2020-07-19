@@ -70,7 +70,6 @@ fun main() {
                 try {
                     inputMsg.toByteArray()?.let {
                         val success = socket!!.send(it.toByteString())
-                        println(if (success) "成功" else "失败")
                     }
                 } catch (e: Exception) {
                     println("二进制数据转换异常")

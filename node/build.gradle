@@ -5,6 +5,10 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation project(":common")
     implementation "org.springframework.boot:spring-boot-starter-web"
@@ -12,6 +16,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "io.netty:netty-all"
+    implementation 'org.apache.zookeeper:zookeeper:3.4.13'
+    implementation 'com.101tec:zkclient:0.11'
     implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
