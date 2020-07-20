@@ -14,15 +14,6 @@ class AppConfig {
     @Value("\${app.zk.switch}")
     var zkSwitch = false
 
-    @Value("\${cim.server.port}")
-    var cimServerPort = 0
-
-    @Value("\${cim.route.url}")
-    var routeUrl: String = ""
-
-    @Value("\${cim.heartbeat.time}")
-    var heartBeatTime: Long = 0
-
     @Value("\${app.zk.connect.timeout}")
     var zkConnectTimeout = 0
 }
