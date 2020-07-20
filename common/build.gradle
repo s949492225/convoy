@@ -39,13 +39,11 @@ jar {
 
 repositories {
     mavenCentral()
-    google()
 }
 
 dependencies {
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin"
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation "io.netty:netty-all"
     implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
 }

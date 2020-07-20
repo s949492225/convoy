@@ -16,8 +16,12 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "io.netty:netty-all"
-    implementation 'org.apache.zookeeper:zookeeper:3.4.13'
-    implementation 'com.101tec:zkclient:0.11'
+    implementation('org.apache.zookeeper:zookeeper:3.4.13') {
+        exclude module: 'slf4j-log4j12'
+    }
+    implementation('com.101tec:zkclient:0.11') {
+        exclude module: 'slf4j-log4j12'
+    }
     implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
